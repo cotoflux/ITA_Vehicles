@@ -1,5 +1,6 @@
 package com.vehicles.project;
 import java.util.*;
+
 public class Principal {
 
 	public static void main(String[] args) {
@@ -24,6 +25,43 @@ public class Principal {
 		System.out.println(cotxeUsuari.brand);
 		System.out.println(cotxeUsuari.color);
 		System.out.println(cotxeUsuari.plate);
+		
+		
+		List<Wheel> wheelsDelanteras = new ArrayList<Wheel>();
+		
+			Scanner pregunta4 = new Scanner(System.in);
+			System.out.println("Siusplau dona'm la marca de les rodes delanteres: ");
+			String rodesMarcaDevant = pregunta4.nextLine();
+		
+			Scanner pregunta5 = new Scanner(System.in);
+			System.out.println("Siusplau dona'm el diàmetre de les rodes delanteres: ");
+			double diametreRodesDevant = pregunta5.nextDouble();
+			
+			Wheel añadeRuedasDelanteras = new Wheel(rodesMarcaDevant, diametreRodesDevant);
+			
+			
+					
+		List<Wheel> wheelsTraseras = new ArrayList<Wheel>();
+		
+			Scanner pregunta6 = new Scanner(System.in);
+			System.out.println("Siusplau dona'm la marca de les rodes traseres: ");
+			String rodesMarcaTraseres = pregunta6.nextLine();
+		
+			Scanner pregunta7 = new Scanner(System.in);
+			System.out.println("Siusplau dona'm el diàmetre de les rodes traseres: ");
+			double diametreRodesTraseres = pregunta7.nextDouble();
+			
+			Wheel añadeRuedasTraseras = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
+
+			addWheels(wheelsDelanteras, wheelsTraseras);
+		
+		
+
+	}
+
+	private static void addWheels(List<Wheel> wheelsDelanteras, List<Wheel> wheelsTraseras) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

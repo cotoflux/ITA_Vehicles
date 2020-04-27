@@ -8,4 +8,6 @@ public class Wheel {
 		this.brand = brand;
 		this.diameter = diameter;
 	}
+
+
 }
