@@ -132,6 +132,119 @@ public class Principal {
 			//Fi coche
 		}else if(carOrBike == 2) {
 			System.out.println("Elegim: " + carOrBike + " . Bicicleta");
+			
+			//Inici Bicicleta
+			
+			Scanner pregunta1 = new Scanner(System.in);
+			String matriculaUsuari;
+			String matriculaConfirmada = "";
+			System.out.println("Siusplau posa la matricula de la teva bicicleta, recorda que te entre 6 i 7 caracters en majúscula");
+			matriculaUsuari= pregunta1.nextLine();
+			
+		    Pattern pat = Pattern.compile("([A-Z]{2,3})(\\d{4})([A-Z]{0,2})");
+		    Matcher mat = pat.matcher(matriculaUsuari);
+			
+			if(mat.matches()) {
+				
+				matriculaConfirmada = matriculaUsuari;
+							
+				Scanner pregunta2 = new Scanner(System.in);
+				String laMarca;
+				System.out.println("Siusplau posa la marca de la teva bicicleta: ");
+				laMarca = pregunta2.nextLine();
+				
+				Scanner pregunta3 = new Scanner(System.in);
+				String colorUsuari;
+				System.out.println("Siusplau escriu el color de la teva bicicleta: ");
+				colorUsuari = pregunta3.nextLine();
+				
+				Car bicicletaUsuari = new Car(matriculaConfirmada, laMarca, colorUsuari);
+				
+				System.out.println("La marca de la teva Bicicleta: "+bicicletaUsuari.brand);
+				System.out.println("El color de la teva Bicicleta es: "+bicicletaUsuari.color);
+				System.out.println("La teva matrícula es: "+bicicletaUsuari.plate);
+				
+				
+				List<Wheel> wheelsDelanteras = new ArrayList<Wheel>();
+				
+					Scanner pregunta4 = new Scanner(System.in);
+					System.out.println("Siusplau dona'm la marca de les rodes delanteres: ");
+					String rodesMarcaDevant = pregunta4.nextLine();
+				
+					Scanner pregunta5 = new Scanner(System.in);
+					System.out.println("Siusplau dona'm el diàmetre de les rodes delanteres: ");
+					double diametreRodesDevant = pregunta5.nextDouble();
+					
+					if(diametreRodesDevant>0.4 && diametreRodesDevant<4.0){
+						System.out.println("Diametre correcter");
+						
+						//Inicio diametro
+						
+								Wheel rueda1 = new Wheel(rodesMarcaDevant, diametreRodesDevant);
+								wheelsDelanteras.add(rueda1);
+
+								
+								
+								System.out.println(wheelsDelanteras.size());
+			
+								
+							    for (Wheel i : wheelsDelanteras) {
+							        System.out.println("Rodes delanteres: " + i);
+							      }
+										
+					List<Wheel> wheelsTraseras = new ArrayList<Wheel>();
+							
+								Scanner pregunta6 = new Scanner(System.in);
+								System.out.println("Siusplau dona'm la marca de les rodes traseres: ");
+								String rodesMarcaTraseres = pregunta6.nextLine();
+							
+								Scanner pregunta7 = new Scanner(System.in);
+								System.out.println("Siusplau dona'm el diàmetre de les rodes traseres: ");
+								double diametreRodesTraseres = pregunta7.nextDouble();
+								
+								Wheel añadeRuedasTraseres1 = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
+								Wheel añadeRuedasTraseres2 = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
+								
+								wheelsTraseras.add(añadeRuedasTraseres1);
+								wheelsTraseras.add(añadeRuedasTraseres2);
+								
+								System.out.println(wheelsTraseras.size());
+			
+								
+							    for (Wheel j : wheelsTraseras) {
+							        System.out.println("Rodes Traseres" + j);
+							    }
+							
+								try {
+									bicicletaUsuari.addWheels(wheelsDelanteras, wheelsTraseras);
+								} catch (Exception e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+						
+						
+						//Fin diametro
+						
+						 
+					} else {
+						System.out.println("El diametro no es correcto, vuelve a reiniciar el programa.");
+					}
+					
+					
+				
+				
+				//Fi introduccio codig
+				
+				
+			} else {
+				System.out.println("La matricula introduida no es correcte torna a executar el programa");
+
+			}//else
+			
+			
+			//FI Bicicleta
+			
+			
 		}else{
 			System.out.println("Has introduit: " + carOrBike +" . No es una opció correcte. Reinicia el programa");
 		}
