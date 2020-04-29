@@ -37,9 +37,18 @@ public class Principal {
 			System.out.println("Siusplau dona'm el diàmetre de les rodes delanteres: ");
 			double diametreRodesDevant = pregunta5.nextDouble();
 			
-			Wheel añadeRuedasDelanteras = new Wheel(rodesMarcaDevant, diametreRodesDevant);
+			Wheel rueda1 = new Wheel(rodesMarcaDevant, diametreRodesDevant);
+			Wheel rueda2 = new Wheel(rodesMarcaDevant, diametreRodesDevant);
+			wheelsDelanteras.add(rueda1);
+			wheelsDelanteras.add(rueda2);
 			
 			
+			System.out.println(wheelsDelanteras.size());
+
+			
+		    for (Wheel i : wheelsDelanteras) {
+		        System.out.println("Rodes delanteres: " + i);
+		      }
 					
 		List<Wheel> wheelsTraseras = new ArrayList<Wheel>();
 		
@@ -51,17 +60,28 @@ public class Principal {
 			System.out.println("Siusplau dona'm el diàmetre de les rodes traseres: ");
 			double diametreRodesTraseres = pregunta7.nextDouble();
 			
-			Wheel añadeRuedasTraseras = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
+			Wheel añadeRuedasTraseres1 = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
+			Wheel añadeRuedasTraseres2 = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
+			
+			wheelsTraseras.add(añadeRuedasTraseres1);
+			wheelsTraseras.add(añadeRuedasTraseres2);
+			
+			System.out.println(wheelsTraseras.size());
 
-			addWheels(wheelsDelanteras, wheelsTraseras);
+			
+		    for (Wheel j : wheelsTraseras) {
+		        System.out.println("Rodes Traseres" + j);
+		    }
 		
+			try {
+				cotxeUsuari.addWheels(wheelsDelanteras, wheelsTraseras);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
+}
 
-	}
 
-	private static void addWheels(List<Wheel> wheelsDelanteras, List<Wheel> wheelsTraseras) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
