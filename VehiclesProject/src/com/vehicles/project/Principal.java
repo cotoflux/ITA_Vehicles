@@ -9,6 +9,9 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
+		Scannner preguntaPrimera = new Scanner(System.in);
+		int
+		
 		Scanner pregunta1 = new Scanner(System.in);
 		String matriculaUsuari;
 		String matriculaConfirmada = "";
