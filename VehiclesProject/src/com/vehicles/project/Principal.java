@@ -71,9 +71,7 @@ public class Principal {
 								wheelsDelanteras.add(rueda1);
 								wheelsDelanteras.add(rueda2);
 								
-								
-								System.out.println(wheelsDelanteras.size());
-			
+					
 								
 							    for (Wheel i : wheelsDelanteras) {
 							        System.out.println("Rodes delanteres: " + i);
@@ -94,8 +92,7 @@ public class Principal {
 								
 								wheelsTraseras.add(añadeRuedasTraseres1);
 								wheelsTraseras.add(añadeRuedasTraseres2);
-								
-								System.out.println(wheelsTraseras.size());
+						
 			
 								
 							    for (Wheel j : wheelsTraseras) {
@@ -131,6 +128,7 @@ public class Principal {
 			
 			//Fi coche
 		}else if(carOrBike == 2) {
+			
 			System.out.println("Elegim: " + carOrBike + " . Bicicleta");
 			
 			//Inici Bicicleta
@@ -158,7 +156,7 @@ public class Principal {
 				System.out.println("Siusplau escriu el color de la teva bicicleta: ");
 				colorUsuari = pregunta3.nextLine();
 				
-				Car bicicletaUsuari = new Car(matriculaConfirmada, laMarca, colorUsuari);
+				Bike bicicletaUsuari = new Bike(matriculaConfirmada, laMarca, colorUsuari);
 				
 				System.out.println("La marca de la teva Bicicleta: "+bicicletaUsuari.brand);
 				System.out.println("El color de la teva Bicicleta es: "+bicicletaUsuari.color);
@@ -176,17 +174,13 @@ public class Principal {
 					double diametreRodesDevant = pregunta5.nextDouble();
 					
 					if(diametreRodesDevant>0.4 && diametreRodesDevant<4.0){
-						System.out.println("Diametre correcter");
+
 						
 						//Inicio diametro
 						
 								Wheel rueda1 = new Wheel(rodesMarcaDevant, diametreRodesDevant);
 								wheelsDelantera.add(rueda1);
-
-								
-								
-								System.out.println(wheelsDelantera.size());
-			
+	
 								
 							    for (Wheel i : wheelsDelantera) {
 							        System.out.println("Roda delantera: " + i);
@@ -202,20 +196,19 @@ public class Principal {
 								System.out.println("Siusplau dona'm el diàmetre de la roda trasera: ");
 								double diametreRodesTraseres = pregunta7.nextDouble();
 								
-								Wheel añadeRuedasTrasera1 = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
+								Wheel añadeRuedasTrasera = new Wheel(rodesMarcaTraseres, diametreRodesTraseres);
 								
-								wheelsTrasera.add(añadeRuedasTrasera1);
+								wheelsTrasera.add(añadeRuedasTrasera);
 
 								
-								System.out.println(wheelsTrasera.size());
-			
+
 								
 							    for (Wheel j : wheelsTrasera) {
 							        System.out.println("Rodes Traseres" + j);
 							    }
 							
 								try {
-									bicicletaUsuari.addWheels(wheelsDelanteras, wheelsTrasera);
+									bicicletaUsuari.addWheels(wheelsDelantera, wheelsTrasera);
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
